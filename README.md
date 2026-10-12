@@ -16,5 +16,6 @@ Then open <http://127.0.0.1:3000>. Override the bind address with `HOST` and `PO
 | Method | Path          | Response                              |
 | ------ | ------------- | ------------------------------------- |
 | GET    | `/`           | `Hello, World!` HTML page             |
+| GET    | `/health`     | `{"status":"ok"}`                     |
 | GET    | `/api`        | `{"message":"Hello, World!"}`         |
 | GET    | `/api/health` | `{"status":"ok"}`                     |

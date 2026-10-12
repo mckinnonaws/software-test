@@ -5,6 +5,7 @@ use topcoat::{
 };
 
 mod api;
+mod health;
 
 #[tokio::main]
 async fn main() {
