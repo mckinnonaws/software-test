@@ -1,0 +1,4 @@
+/target
+/infra/node_modules
+/infra/cdk.out
+.env
