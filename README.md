@@ -24,3 +24,8 @@ DATABASE_URL=sqlite:///:memory: pytest -q
 - `/api/v1/products`
 - `/api/v1/cart`
 - `/api/v1/orders`
+
+
+## Infrastructure
+
+See `terraform/` for AWS deployment (ECS Fargate + RDS + ALB).
