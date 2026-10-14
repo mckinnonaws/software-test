@@ -24,3 +24,8 @@ DATABASE_URL=sqlite:///:memory: pytest -q
 - `/api/v1/products`
 - `/api/v1/cart`
 - `/api/v1/orders`
+
+## Frontend
+
+- `/` serves the demo frontend.
+- `/static` and `/assets` serve frontend assets.

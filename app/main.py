@@ -1,7 +1,9 @@
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.api.v1.endpoints import health
 from app.api.v1.router import api_router
@@ -43,6 +45,12 @@ app.add_middleware(
 
 app.include_router(health.router)
 app.include_router(api_router, prefix=settings.api_v1_prefix)
+
+FRONTEND_DIR = Path(__file__).resolve().parents[1] / "frontend"
+if FRONTEND_DIR.is_dir():
+    app.mount("/static", StaticFiles(directory=FRONTEND_DIR, html=True), name="static")
+    app.mount("/assets", StaticFiles(directory=FRONTEND_DIR, html=True), name="assets")
+    app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
 
 
 @app.get("/health")

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnyCompany Demo Store</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>AnyCompany Demo Store</h1>
+    <nav id="nav">
+      <button data-view="products">Products</button>
+      <button data-view="cart">Cart</button>
+      <button data-view="orders">Orders</button>
+      <button data-view="admin" id="adminNav" hidden>Admin</button>
+      <button data-view="auth" id="authNav">Login / Register</button>
+      <button id="logoutBtn" hidden>Logout</button>
+    </nav>
+    <span id="userBadge" class="badge" hidden></span>
+  </header>
+
+  <main>
+    <div id="message" class="message" hidden></div>
+
+    <section id="auth" class="view">
+      <div class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <input name="email" type="email" placeholder="Email" required />
+          <input name="password" type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Register</h2>
+        <form id="registerForm">
+          <input name="email" type="email" placeholder="Email" required />
+          <input name="password" type="password" placeholder="Password" required />
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="products" class="view hidden">
+      <div class="toolbar">
+        <form id="searchForm">
+          <input name="q" placeholder="Search products..." />
+          <button type="submit">Search</button>
+          <button type="button" id="clearSearch">Clear</button>
+        </form>
+      </div>
+      <div id="productList" class="grid"></div>
+    </section>
+
+    <section id="cart" class="view hidden">
+      <h2>Shopping Cart</h2>
+      <div id="cartContent"></div>
+      <button id="checkoutBtn">Checkout</button>
+    </section>
+
+    <section id="orders" class="view hidden">
+      <h2>Order History</h2>
+      <div id="orderList"></div>
+    </section>
+
+    <section id="admin" class="view hidden">
+      <h2>Admin Product Management</h2>
+      <form id="productForm" class="card">
+        <input type="hidden" name="id" />
+        <input name="name" placeholder="Name" required />
+        <textarea name="description" placeholder="Description"></textarea>
+        <input name="price" type="number" step="0.01" min="0.01" placeholder="Price" required />
+        <input name="stock" type="number" min="0" placeholder="Stock" required />
+        <input name="image_url" placeholder="Image URL" />
+        <div class="actions">
+          <button type="submit" id="productSubmit">Create Product</button>
+          <button type="button" id="productReset">Reset</button>
+        </div>
+      </form>
+      <div id="adminProductList" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
