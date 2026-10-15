@@ -24,3 +24,7 @@ DATABASE_URL=sqlite:///:memory: pytest -q
 - `/api/v1/products`
 - `/api/v1/cart`
 - `/api/v1/orders`
+
+## Frontend
+
+The TypeScript frontend lives in `frontend/` and targets Vercel. See `frontend/README.md`.
