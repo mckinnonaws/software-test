@@ -17,6 +17,17 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 DATABASE_URL=sqlite:///:memory: pytest -q
 ```
 
+## Health check
+
+With the app running locally:
+
+```bash
+curl http://localhost:8000/health   # {"status":"ok"}   - app is up
+curl http://localhost:8000/ready    # {"status":"ready"} - app can reach the database
+```
+
+A non-200 response from `/ready` means the database is unreachable.
+
 ## Endpoints
 
 - `/health`, `/ready`
