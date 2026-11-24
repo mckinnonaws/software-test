@@ -26,7 +26,7 @@ curl http://localhost:8000/health   # {"status":"ok"}   - app is up
 curl http://localhost:8000/ready    # {"status":"ready"} - app can reach the database
 ```
 
-A non-200 response from `/ready` means the database is unreachable.
+A non-200 response from `/ready` means the database is unreachable. Check that `DATABASE_URL` (in `.env`) is correct and the database is running, then run `alembic upgrade head` and retry.
 
 ## Endpoints
 
