@@ -19,7 +19,7 @@ DATABASE_URL=sqlite:///:memory: pytest -q
 
 ## Endpoints
 
-- `/health`, `/ready`
+- `/health`, `/ready`, `/version`
 - `/api/v1/auth/*`
 - `/api/v1/products`
 - `/api/v1/cart`
