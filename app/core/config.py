@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     app_name: str = "AnyCompany Monolith"
+    app_version: str = "0.1.0"
     environment: str = "development"
     debug: bool = False
     api_v1_prefix: str = "/api/v1"
