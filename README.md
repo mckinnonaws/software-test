@@ -24,3 +24,7 @@ DATABASE_URL=sqlite:///:memory: pytest -q
 - `/api/v1/products`
 - `/api/v1/cart`
 - `/api/v1/orders`
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to propose changes.
